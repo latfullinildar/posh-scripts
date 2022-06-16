@@ -1,6 +1,6 @@
 ﻿#Скрипт для парсера логов по событию 4624, Тип логона 10
 #Добавить за сутки -after (Get-date -hour 0 -minute 0 -second 0)
-$serv = "dc-gencom-002"
+$serv = "dc002"
 
 foreach ($srv in $serv) {
 Get-EventLog -ComputerName $srv -Logname security -After (Get-Date).AddDays(-1)| ?{$_.EventID -eq 4624 -and $_.Message -match 'Тип входа:\s+(10)\s'}| %{
