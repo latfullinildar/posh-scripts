@@ -1,6 +1,6 @@
 ﻿ 
 $vms = (Get-VM -Name test-sfb)
-$hostName = "sr-gen9tais-01"
+$hostName = "sr-gen9-01"
 $storagePath = "D:\"
  
 Foreach ($vm in $vms) {
