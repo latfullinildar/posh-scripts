@@ -26,4 +26,4 @@ foreach ($log in $logs) {
 }
 # удаляем старые логи, больше дней указанных в переменной, и имя не содержит слово "archive"
 $cutoffDays = 30
-Get-ChildItem -Path $logFolder -Include $include | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(0 - $cutoffDays) -and $_.Name -notmatch "archive" } | Remove-Item -WhatIf
+Get-ChildItem -Path $logFolder -Include $include | Where-Object { $_.LastWriteTime -lt (Get-Date).AddDays(0 - $cutoffDays) -and $_.Name -notmatch "archive" } | Remove-Item
