@@ -1,4 +1,4 @@
-#Удаленной выполнение скриптов
+#remote servers
 $Dcs = Import-CSV "$PSScriptRoot\dc.txt"
 
 ForEach ($dc in $Dcs) {
