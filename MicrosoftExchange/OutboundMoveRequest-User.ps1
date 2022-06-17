@@ -4,8 +4,12 @@ $localCredentials = Get-Credential
 
 $RemoteCredentials = Get-Credential
 
+$trdb = "Mailbox1"
+$rexch = "ex-001.remote.corp"
+$trdomain = "remote.ru"
+
 cd "C:\Program Files\Microsoft\Exchange Server\V15\Scripts"
 
 #Запуск с исходного сервера. Outbound Миграция
-New-MoveRequest -Identity test@remote.ru -Outbound -RemoteTargetDatabase "Mailbox2" -Remotehostname ex-003.target.corp -RemoteCredential $RemoteCredentials `
--TargetDeliverydomain remote.ru -BadItemLimit 200 -AcceptLargeDataLoss
+New-MoveRequest -Identity test@remote.ru -Outbound -RemoteTargetDatabase $trdb -Remotehostname $rexch -RemoteCredential $RemoteCredentials `
+-TargetDeliverydomain $trdomain -BadItemLimit 200 -AcceptLargeDataLoss
