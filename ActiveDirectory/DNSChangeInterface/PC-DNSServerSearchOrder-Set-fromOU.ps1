@@ -1,4 +1,5 @@
 ﻿#Скрипт для изменения DNS на удаленных компьютерах
+
 #Импортируем модуль Active Directory
 Import-Module ActiveDirectory
 
